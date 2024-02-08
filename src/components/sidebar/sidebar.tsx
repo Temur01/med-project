@@ -2,7 +2,7 @@ import LogoSection from "../logo/logo";
 import SidebarItem from "./sidebarItem";
 
 const Sidebar: React.FC = () => (
-  <aside className="w-20 md:w-64 p-2 h-screen bg-white" aria-label="Sidebar">
+  <aside className="w-20 md:w-64 p-2 h-screen border-r bg-white" aria-label="Sidebar">
     <LogoSection
       logoPath={
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/UZINFOCOM_logo.png/472px-UZINFOCOM_logo.png"
@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => (
             Состояние здоровья и благополучия населения
           </span>
         </SidebarItem>
-        <SidebarItem to="/services">
+        <SidebarItem to="/service">
           <span className="hidden md:inline">Охват услугами</span>
         </SidebarItem>
         <SidebarItem to="/staff">
