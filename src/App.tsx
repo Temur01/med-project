@@ -11,7 +11,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <div className="flex h-screen bg-gray-100">
-          <Sidebar />
+          <div className="border-r">
+            <Sidebar />
+          </div>
           <Main />
         </div>
       </BrowserRouter>

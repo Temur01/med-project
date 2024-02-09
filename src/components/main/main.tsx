@@ -8,7 +8,7 @@ import StaffPage from "../../pages/dashboard/staff/staff";
 import AdminPage from "../../pages/dashboard/admin/admin";
 
 const Main = () => (
-    <main className="flex-1">
+    <main className="flex-1 bg-white">
       <Header />
       <div className="p-4">
         <Routes>
