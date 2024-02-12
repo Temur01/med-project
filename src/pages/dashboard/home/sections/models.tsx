@@ -1,5 +1,6 @@
 import React from "react";
 import PieChartOfModel from "../../../../components/piecharts/service_chart";
+import { models } from "../../../../data/charts";
 
 const HomeModel: React.FC = () => {
   return (
@@ -11,11 +12,15 @@ const HomeModel: React.FC = () => {
             title="Учреждений"
             text="Практикуют систему прикрепления населения"
             number={75}
+            data={models}
+            people={"50"}
           />
           <PieChartOfModel
             title="В Гос. секторе"
             text="Общее количество медицинских учреждений ПМСП на 10.000 населения"
             number={32}
+            data={models}
+            people={"50"}
           />
         </div>
       </div>

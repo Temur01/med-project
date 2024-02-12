@@ -6,6 +6,34 @@ export const models = [
   { value: 55, color: "#B2B7C2" },
   { value: 45, color: "#636FDE" },
 ];
+
+export const staff = [
+  { value: 32, color: "#05C0DA" },
+  { value: 32, color: "#636FDE" },
+  { value: 32, color: "#B2B7C2" },
+];
+
+export const staff_stat = [
+  {
+    name: "Многопрофильные центральные поликлиники",
+    value: 25000,
+    percentage: "32%",
+    color: "#05C0DA",
+  },
+  {
+    name: "Пункты семейных врачей",
+    value: 25000,
+    percentage: "32%",
+    color: "#636FDE",
+  },
+  {
+    name: "Семейные поликлиники",
+    value: 25000,
+    percentage: "32%",
+    color: "#B2B7C2",
+  },
+];
+
 export const ages = [
   {
     name: "0-4 года",

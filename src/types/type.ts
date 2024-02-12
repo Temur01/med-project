@@ -24,3 +24,8 @@ export type AdultDataItem = {
   Мужчины: number;
   Женщины: number;
 };
+
+export type PieChartT = {
+  value: number;
+  color: string;
+};
