@@ -26,11 +26,11 @@ const PieChartOfService: React.FC<Props> = ({ title, text, number }) => {
         <div className="text-lg text-gray-600 flex justify-center items-center flex-col">
           Всего:
           <br />
-          <span className="font-bold text-black text-xl">50</span>
+          <span className="font-bold text-black text-2xl">50</span>
           {title}
         </div>
       </div>
-      <div className="flex items-center gap-3 mt-4">
+      <div className="flex items-center gap-3 mt-6 ms-4">
         <div className="">{number}%</div>
         <div className="w-56 leading-5">{text}</div>
       </div>
