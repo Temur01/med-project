@@ -8,7 +8,7 @@ type Props = {
 };
 
 const BarChartOfCategory = ({ data, type }: Props) => {
-  const [chartWidth, setChartWidth] = useState(window.innerWidth - 400);
+  const [chartWidth, setChartWidth] = useState<number>(window.innerWidth - 400);
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,7 +38,15 @@ const BarChartOfCategory = ({ data, type }: Props) => {
       <Bar
         dataKey="Результат"
         stackId="a"
-        fill={!type ? "#636FDE" : "#245DDD"}
+        fill={
+          type === "light-blue"
+            ? "#71AFC9"
+            : type === "error"
+            ? "#DE6379"
+            : type === "more-error"
+            ? "#DD3957"
+            : "#636FDE"
+        }
         barSize={80}
         radius={[10, 10, 10, 10]}
       />

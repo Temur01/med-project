@@ -4,7 +4,7 @@ import PieChartOfModel from "../../../../components/piecharts/service_chart";
 const HomeModel: React.FC = () => {
   return (
     <div>
-      <div className="text-2xl mb-4">Модели предоставления услуг</div>
+      <div className="text-2xl mb-4 ms-6">Модели предоставления услуг</div>
       <div className="shadow-md px-12 pt-8 pb-28 rounded-lg">
         <div className="flex items-center gap-52 justify-start">
           <PieChartOfModel

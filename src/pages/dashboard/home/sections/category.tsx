@@ -49,7 +49,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <BarChartOfCategory data={ages} />
+      <BarChartOfCategory data={ages} type="light-blue"/>
     </div>
   );
 };

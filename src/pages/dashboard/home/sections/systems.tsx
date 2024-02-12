@@ -3,7 +3,7 @@ import { medicalCentres } from "../../../../data/charts";
 
 const MedicalSystem = () => {
   return (
-    <div className="shadow-md p-6 rounded-lg">
+    <div className="shadow-md p-6 pb-10 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold">
         Общее количество медицинских учреждений на 10 000 населения
       </div>

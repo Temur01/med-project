@@ -4,8 +4,8 @@ import { medicalCentres } from "../../../../data/charts";
 const MedicalCentres = () => {
   return (
     <div>
-      <div className="text-2xl mb-4">Физическая инфраструктура</div>
-      <div className="shadow-md p-6 rounded-lg">
+      <div className="text-2xl mb-4 ms-6">Физическая инфраструктура</div>
+      <div className="shadow-md p-6 pb-10 rounded-lg">
         <div className="text-2xl text-blue-700 font-semibold">
           Общее количество медицинских учреждений на 10 000 населения
         </div>

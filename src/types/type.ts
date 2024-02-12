@@ -19,3 +19,8 @@ export type BarShapeType = {
   name: string;
   Результат: number;
 };
+export type AdultDataItem = {
+  name: string;
+  Мужчины: number;
+  Женщины: number;
+};
