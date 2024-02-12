@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { BarShapeType } from "../../types/type";
 
 type Props = {
   data: BarShapeType[];
+  type?: string;
 };
 
-const BarChartOfCategory = ({ data }: Props) => {
+const BarChartOfCategory = ({ data, type }: Props) => {
   const [chartWidth, setChartWidth] = useState(window.innerWidth - 400);
 
   useEffect(() => {
@@ -37,11 +31,17 @@ const BarChartOfCategory = ({ data }: Props) => {
         left: -24,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" vertical={false}/>
-      <XAxis dataKey="name" axisLine={false} tickMargin={10}/>
+      <CartesianGrid strokeDasharray="3 3" vertical={false} />
+      <XAxis dataKey="name" axisLine={false} tickMargin={10} />
       <YAxis />
       <Tooltip />
-      <Bar dataKey="Результат" stackId="a" fill="#636FDE" barSize={80} radius={[10, 10, 10, 10]} />
+      <Bar
+        dataKey="Результат"
+        stackId="a"
+        fill={!type ? "#636FDE" : "#245DDD"}
+        barSize={80}
+        radius={[10, 10, 10, 10]}
+      />
     </BarChart>
   );
 };
