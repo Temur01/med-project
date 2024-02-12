@@ -4,14 +4,14 @@ import { ages } from "../../../../data/charts";
 const Category = () => {
   return (
     <div className="shadow-md p-6 rounded-lg">
-      <div className="text-xl text-blue-700 font-semibold">
+      <div className="text-2xl text-blue-700 font-semibold">
         Возрастные категории
       </div>
       <div className="mb-4 px-4 flex items-center gap-4 justify-end">
         <div className="relative inline-block text-gray-700">
           <select
             className="bg-white border border-gray-300 rounded-2xl text-sm 
-             focus:ring-blue-500 focus:border-blue-500 h-9 pl-4 pr-10 
+             h-9 pl-4 pr-10 
              appearance-none outline-none"
           >
             {[...Array(3)].map((_, index) => (
@@ -33,7 +33,7 @@ const Category = () => {
         <div className="relative inline-block text-gray-700">
           <select
             className="bg-white border border-gray-300 rounded-2xl text-sm 
-             focus:ring-blue-500 focus:border-blue-500 h-9 pl-4 pr-10 
+            h-9 pl-4 pr-10 
              appearance-none outline-none"
           >
             <option value={"Возраст"}>Пол</option>
@@ -49,7 +49,7 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <BarChartOfCategory data={ages}/>
+      <BarChartOfCategory data={ages} />
     </div>
   );
 };

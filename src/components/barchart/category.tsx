@@ -6,15 +6,14 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 import { BarShapeType } from "../../types/type";
 
 type Props = {
-    data:BarShapeType[]
-}
+  data: BarShapeType[];
+};
 
-const BarChartOfCategory = ({data}:Props) => {
+const BarChartOfCategory = ({ data }: Props) => {
   const [chartWidth, setChartWidth] = useState(window.innerWidth - 400);
 
   useEffect(() => {
@@ -38,12 +37,11 @@ const BarChartOfCategory = ({data}:Props) => {
         left: -24,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <CartesianGrid strokeDasharray="3 3" vertical={false}/>
+      <XAxis dataKey="name" axisLine={false} tickMargin={10}/>
       <YAxis />
       <Tooltip />
-      <Legend />
-      <Bar dataKey="Результат" stackId="a" fill="#8884d8" barSize={100}  />
+      <Bar dataKey="Результат" stackId="a" fill="#636FDE" barSize={80} radius={[10, 10, 10, 10]} />
     </BarChart>
   );
 };

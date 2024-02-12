@@ -1,10 +1,10 @@
 import PersonCard from "../../../../components/card/personCard";
-import PieChartComponent from "../../../../components/piecharts/population";
+import PieChartComponent from "../../../../components/piecharts/population_chart";
 
 const AllInformationSection = () => {
   return (
     <div className="shadow-md p-6 rounded-lg">
-      <div className="text-blue-700 text-xl font-semibold mb-12">
+      <div className="text-blue-700 text-2xl font-semibold mb-12">
         Общие данные по населению Республики узбекистан
       </div>
 
@@ -23,7 +23,7 @@ const AllInformationSection = () => {
             <div className="relative inline-block text-gray-700">
               <select
                 className="bg-white border border-gray-300 rounded-2xl text-sm 
-             focus:ring-blue-500 focus:border-blue-500 h-9 pl-4 pr-10 
+              h-9 pl-4 pr-10 
              appearance-none outline-none"
               >
                 {[...Array(3)].map((_, index) => (
@@ -45,7 +45,7 @@ const AllInformationSection = () => {
             <div className="relative inline-block text-gray-700">
               <select
                 className="bg-white border border-gray-300 rounded-2xl text-sm 
-             focus:ring-blue-500 focus:border-blue-500 h-9 pl-4 pr-10 
+             h-9 pl-4 pr-10 
              appearance-none outline-none"
               >
                 <option value={"Возраст"}>Возраст</option>

@@ -4,7 +4,7 @@ import boy from "../../../../assets/child.png";
 const Condition = () => {
   return (
     <div className="shadow-md p-6 rounded-lg">
-      <div className="text-xl text-blue-700 font-semibold">
+      <div className="text-2xl text-blue-700 font-semibold">
         МОНИТОРИНГ СОСТОЯНИЙ
       </div>
 

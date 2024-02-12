@@ -18,6 +18,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/components/piecharts/service_chart.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
