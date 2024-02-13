@@ -274,10 +274,36 @@ export const tranings = [
   },
 ];
 
-
 export const fakeData = [
   { id: 1, dateAdded: "December 10, 2023", year: 2023 },
   { id: 2, dateAdded: "December 10, 2022", year: 2022 },
   { id: 3, dateAdded: "December 10, 2021", year: 2021 },
   { id: 4, dateAdded: "December 10, 2020", year: 2020 },
+];
+
+export const fakeAdmins = [
+  {
+    id: 1,
+    username: "Алексей Юшков",
+    email: "Alexyushkov@gmail.com",
+    time: "September 10, 2023",
+  },
+  {
+    id: 2,
+    username: "Алексей Юшков",
+    email: "Alexyushkov@gmail.com",
+    time: "September 10, 2023",
+  },
+  {
+    id: 3,
+    username: "Алексей Юшков",
+    email: "Alexyushkov@gmail.com",
+    time: "September 10, 2023",
+  },
+  {
+    id: 4,
+    username: "Алексей Юшков",
+    email: "Alexyushkov@gmail.com",
+    time: "September 10, 2023",
+  },
 ];

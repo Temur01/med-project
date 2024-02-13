@@ -41,3 +41,10 @@ export type DataRow = {
   dateAdded: string;
   year: number;
 };
+
+export type AdminRow = {
+  id:number,
+  username:string,
+  email:string,
+  time:string
+}

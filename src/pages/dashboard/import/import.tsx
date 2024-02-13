@@ -6,8 +6,8 @@ import AddBtn from "../../../components/button/add";
 import SearchBtn from "../../../components/inputs/search";
 
 const ImportPage: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1); // Start with page 1
-  const [totalPages] = useState<number>(5); // Total pages are 3
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages] = useState<number>(4);
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -20,7 +20,7 @@ const ImportPage: React.FC = () => {
       <div>
         <div className="flex justify-between items-center px-8 py-4">
           <SearchBtn />
-          <AddBtn  />
+          <AddBtn btnName="сотрудника" />
         </div>
         <div className="font-semibold mb-3 ms-8">Импортированные данные</div>
       </div>

@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className="flex justify-center items-center space-x-1">
       <button
-        className={`w-11 h-11 flex justify-center items-center rounded-md border ${
+        className={`w-10 h-10 flex justify-center items-center rounded-md border ${
           currentPage === 1
             ? "opacity-50 cursor-not-allowed"
             : "hover:bg-gray-400 hover:text-gray-200"
@@ -28,13 +28,13 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-       <ChevronLeft size={24} />
+       <ChevronLeft size={22} />
       </button>
 
       {range(1, totalPages).map((number) => (
         <button
           key={number}
-          className={`w-11 h-11 flex justify-center items-center rounded-md border text-lg ${
+          className={`w-10 h-10 flex justify-center items-center rounded-md border text-lg ${
             currentPage === number
               ? "text-indigo-700 border-indigo-700 border-2 font-semibold"
               : "hover:bg-gray-200"
@@ -46,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
       ))}
 
       <button
-        className={`w-11 h-11 flex justify-center items-center rounded-md border ${
+        className={`w-10 h-10 flex justify-center items-center rounded-md border ${
           currentPage === totalPages
             ? "opacity-50 cursor-not-allowed"
             : "hover:bg-gray-400 hover:text-gray-200"
@@ -54,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-             <ChevronRight size={24} />
+             <ChevronRight size={22} />
       </button>
     </div>
   );
