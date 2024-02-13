@@ -3,8 +3,8 @@ type LogoProps = {
 };
 
 const LogoSection = ({ logoPath }: LogoProps) => (
-  <div className="bg-white p-2">
-    <img src={logoPath} alt="Logo" className="h-10 mx-auto" />
+  <div className="bg-white">
+    <img src={logoPath} alt="Logo" className="w-32 mx-auto" />
   </div>
 );
 
