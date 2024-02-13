@@ -1,7 +1,26 @@
 import PieChartOfService from "../../../../components/piecharts/service_chart";
 import { staff, staff_stat } from "../../../../data/charts";
 
+type StatT = {
+  id: number;
+  name: string;
+  percentage: string;
+  value: number;
+};
+
 const Proportion = () => {
+  const changeTextShape = (text: string): string => {
+    const words = text.split(" ");
+    const lastWord = words.pop();
+    return `${words.join(" ")}\n${lastWord}`;
+  };
+
+  const chooseColor = (id:number):string =>{
+    if(id === 1)  return "#05C0DA"
+    else if (id === 2) return ""
+    else return ""
+  }
+
   return (
     <div className="shadow p-10 rounded-lg">
       <div className="flex justify-end">
@@ -54,16 +73,16 @@ const Proportion = () => {
           people={"75 000"}
         />
         <div className="p-4">
-          {staff_stat.map((item, index) => (
-            <div key={index} className="flex items-center mb-4">
+          {staff_stat.map((item: StatT) => (
+            <div key={item.id} className="flex items-center mb-4">
               <div
-                className={`w-12 h-12 rounded-full bg-[${item.color}] text-white flex items-center justify-center mr-4`}
+                className={`w-12 h-12 rounded-full bg-[${chooseColor(item.id)}] text-white flex items-center justify-center mr-4`}
               >
                 <span className="text-sm">{item.percentage}</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-semibold">{item.value}</span>
-                <span className="text-sm">{item.name}</span>
+                <span className="text-sm">{changeTextShape(item.name)}</span>
               </div>
             </div>
           ))}

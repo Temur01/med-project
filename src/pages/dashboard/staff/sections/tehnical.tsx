@@ -1,18 +1,17 @@
 import SimpleBarChart from "../../../../components/barchart/simple";
-import { adults } from "../../../../data/charts";
+import { tranings } from "../../../../data/charts";
 
-
-
-const Adults = () => {
+const Technical = () => {
   return (
     <div className="shadow-md p-6 rounded-lg">
-      <div className="text-2xl text-blue-700 font-semibold w-1/2 leading-6">
-        Коэффициент смертности детей в возрасте до пяти лет
+      <div className="text-2xl text-blue-700 font-semibold w-2/3 leading-6">
+        Доля технического и профессионального персонала всех семейных
+        поликлиник, обученных по использованию оборудования{" "}
       </div>
       <div className="mb-4 flex items-center gap-4 justify-between">
         <div className="mt-4 text-xl">
           Национальный показатель:
-          <span className="text-xl text-red-500 font-semibold"> 5 409</span>
+          <span className="text-xl text-amber-500 font-semibold"> 50%</span>
         </div>
         <div>
           <div className="relative inline-block text-gray-700 me-4">
@@ -44,7 +43,7 @@ const Adults = () => {
             h-9 pl-4 pr-10 
              appearance-none outline-none"
             >
-              <option value={"Возраст"}>Ташкент</option>
+              <option value={"Возраст"}>Пол</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
               <svg
@@ -58,9 +57,14 @@ const Adults = () => {
           </div>
         </div>
       </div>
-      <SimpleBarChart data={adults} firstKey="Мужчины" secondKey="Женщины"/>
+      <SimpleBarChart
+        data={tranings}
+        type={1}
+        firstKey="Технический"
+        secondKey="Профессиональный"
+      />
     </div>
   );
 };
 
-export default Adults;
+export default Technical;

@@ -8,13 +8,17 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { AdultDataItem } from "../../types/type";
+import { AdultDataItem, TrainingDataItemT } from "../../types/type";
 
 type Props = {
-  data: AdultDataItem[];
+  data: AdultDataItem[] | TrainingDataItemT[];
+  type?: number;
+  firstKey:string,
+  secondKey:string
 };
 
-const SimpleBarChart: FC<Props> = ({ data }) => {
+const SimpleBarChart: FC<Props> = ({ data, type, firstKey, secondKey }) => {
+  console.log("🚀 ~ type:", type)
   const [chartWidth, setChartWidth] = useState<number>(window.innerWidth - 400);
 
   useEffect(() => {
@@ -42,9 +46,17 @@ const SimpleBarChart: FC<Props> = ({ data }) => {
       <XAxis dataKey="name" axisLine={false} tickMargin={10} />
       <YAxis />
       <Tooltip />
-      <Legend   />
-      <Bar dataKey="Мужчины" fill="#636FDE" radius={[10, 10, 10, 10]} />
-      <Bar dataKey="Женщины" fill="#DE6379" radius={[10, 10, 10, 10]} />
+      <Legend />
+      <Bar
+        dataKey={firstKey}
+        fill={!type ? "#636FDE" : "#8A63DE"}
+        radius={[10, 10, 10, 10]}
+      />
+      <Bar
+        dataKey={secondKey}
+        fill={!type ? "#DE6379" : "#DEAD63"}
+        radius={[10, 10, 10, 10]}
+      />
     </BarChart>
   );
 };

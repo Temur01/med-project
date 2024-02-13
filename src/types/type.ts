@@ -25,7 +25,19 @@ export type AdultDataItem = {
   Женщины: number;
 };
 
+export type TrainingDataItemT = {
+  name: string;
+  Технический: number;
+  Профессиональный: number;
+};
+
 export type PieChartT = {
   value: number;
   color: string;
+};
+
+export type DataRow = {
+  id: number;
+  dateAdded: string;
+  year: number;
 };
