@@ -1,7 +1,7 @@
 import AllStaffes from "./sections/all";
 import LastSection from "./sections/last";
 import Proportion from "./sections/proportion";
-import Technical from "./sections/tehnical";
+import Technical from "./sections/technical";
 import Training from "./sections/training";
 
 const StaffPage = () => {
