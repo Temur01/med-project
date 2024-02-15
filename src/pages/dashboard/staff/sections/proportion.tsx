@@ -15,11 +15,11 @@ const Proportion = () => {
     return `${words.join(" ")}\n${lastWord}`;
   };
 
-  const chooseColor = (id:number):string =>{
-    if(id === 1)  return "#05C0DA"
-    else if (id === 2) return ""
-    else return ""
-  }
+  const chooseColor = (id: number): string => {
+    if (id === 1) return "bg-[#636FDE]";
+    else if (id === 2) return "bg-[#B2B7C2]";
+    else return "bg-[#05C0DA]";
+  };
 
   return (
     <div className="shadow p-10 rounded-lg">
@@ -76,7 +76,9 @@ const Proportion = () => {
           {staff_stat.map((item: StatT) => (
             <div key={item.id} className="flex items-center mb-4">
               <div
-                className={`w-12 h-12 rounded-full bg-[${chooseColor(item.id)}] text-white flex items-center justify-center mr-4`}
+                className={`w-12 h-12 rounded-full ${chooseColor(
+                  item.id
+                )} text-white flex items-center justify-center mr-4`}
               >
                 <span className="text-sm">{item.percentage}</span>
               </div>
