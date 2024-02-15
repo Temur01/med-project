@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import { User } from "lucide-react";
+import { useState, useRef, useEffect, FC } from "react";
 import { useNavigate } from "react-router";
 
-const Avatar: React.FC = () => {
+const Avatar: FC = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -23,25 +24,28 @@ const Avatar: React.FC = () => {
   }, [dropdownRef]);
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
-      <div
-        className="cursor-pointer p-2 rounded-full hover:bg-gray-100"
+    <div className="relative inline-block" ref={dropdownRef}>
+      <button
         onClick={toggleDropdown}
+        type="button"
+        className="flex items-center gap-2 py-2.5 px-3 me-2 mb-1 text-sm font-medium text-gray-900 focus:outline-none bg-white"
       >
-        <img src="https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg" className="w-7 h-7" alt="profile picture" />
-      </div>
+        <User size={20} />
+        Админ
+      </button>
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <div className="origin-top-right absolute right-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div
-            className="py-1"
+            className="p-1"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
+          
             <div
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
               role="menuitem"
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
             >
               Sign Out
             </div>

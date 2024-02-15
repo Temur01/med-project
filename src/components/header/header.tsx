@@ -1,36 +1,40 @@
 import { useLocation } from "react-router";
+import { useMemo } from "react";
+import Avatar from "../avatar/avatar";
 
 const Header = () => {
-  const localtion = useLocation();
+  const location = useLocation();
 
-  const findPageName = (localtion: string): string => {
-    if (localtion === "/home") {
-      return " Эффективность деятельности Системы ПМСП";
-    } else if (localtion === "/health") {
-      return "Состояние здоровья и благополучия населения";
-    } else if (localtion === "/service") {
-      return "Охват услугами";
-    } else if (localtion === "/staff") {
-      return "Кадровые ресурсы Министерства здравоохранения";
-    } else if (localtion === "/import") {
-      return "Импорт данных";
-    } else {
-      return "Сотрудники";
+  const pageName = useMemo(() => {
+    switch (location.pathname) {
+      case "/home":
+        return "Эффективность деятельности Системы ПМСП";
+      case "/health":
+        return "Состояние здоровья и благополучия населения";
+      case "/service":
+        return "Охват услугами";
+      case "/staff":
+        return "Кадровые ресурсы Министерства здравоохранения";
+      case "/import":
+        return "Импорт данных";
+      case "/admin":
+        return "Сотрудники";
+      default:
+        return "";
     }
-  };
+  }, [location.pathname]);
 
   return (
-    <header className="bg-gray-50 shadow p-4">
-      <div className="container mx-2 flex justify-between items-center">
-        <h1 className="text-lg font-bold">
-          {findPageName(localtion.pathname)}
-        </h1>
-        <nav>
-          <ul className="flex space-x-4">{/* <Avatar /> */}</ul>
-        </nav>
+    <header className="py-2 overflow-hidden">
+    <div className="container mx-4 flex justify-between">
+      <h1 className="text-xl font-bold mt-12">{pageName}</h1>
+      <div>
+        <Avatar />
       </div>
-    </header>
+    </div>
+    <hr className="mt-2 h-1.5 rounded-sm bg-gradient-to-r from-blue-300 from-40% to-blue-400 to-60%" />
+  </header>
   );
-};
+};  
 
 export default Header;

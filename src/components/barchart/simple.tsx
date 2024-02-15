@@ -13,12 +13,11 @@ import { AdultDataItem, TrainingDataItemT } from "../../types/type";
 type Props = {
   data: AdultDataItem[] | TrainingDataItemT[];
   type?: number;
-  firstKey:string,
-  secondKey:string
+  firstKey: string;
+  secondKey: string;
 };
 
 const SimpleBarChart: FC<Props> = ({ data, type, firstKey, secondKey }) => {
-  console.log("🚀 ~ type:", type)
   const [chartWidth, setChartWidth] = useState<number>(window.innerWidth - 400);
 
   useEffect(() => {

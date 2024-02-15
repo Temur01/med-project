@@ -6,13 +6,13 @@ const Population = () => {
     <div className="bg-white w-72 h-72 flex justify-center items-center relative">
       <PieChart
         data={population}
-        style={{ width: "100%", height: "100%" }}
         lineWidth={35}
         animate
         paddingAngle={2}
         label={({ dataEntry }) => `${Math.round(dataEntry.percentage)}%`}
         labelPosition={82}
         startAngle={145}
+        className="w-full h-full"
         labelStyle={{
           fontSize: "6px",
           fill: "#fff",
