@@ -4,6 +4,7 @@ import Main from "./components/main/main";
 import Sidebar from "./components/sidebar/sidebar";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { I18nextProvider } from "react-i18next";
+
 import i18n from "./components/i18n/i18n";
 
 const queryClient = new QueryClient();
