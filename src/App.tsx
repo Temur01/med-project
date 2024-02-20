@@ -3,23 +3,26 @@ import { BrowserRouter } from "react-router-dom";
 import Main from "./components/main/main";
 import Sidebar from "./components/sidebar/sidebar";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
+import { I18nextProvider } from "react-i18next";
+import i18n from "./components/i18n/i18n";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <div className="flex h-screen bg-gray-100">
-          <div className="border-r">
-            <Sidebar />
+    <I18nextProvider i18n={i18n}>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <div className="flex h-screen bg-gray-100">
+            <div className="border-r">
+              <Sidebar />
+            </div>
+            <Main />
           </div>
-          <Main />
-        </div>
-      </BrowserRouter>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+        </BrowserRouter>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </I18nextProvider>
   );
 };
 export default App;

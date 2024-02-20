@@ -13,9 +13,9 @@ const Header = () => {
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleLanguageChange = (language: Language) => {
-    i18n.changeLanguage(language.code);
-    Cookies.set("i18next", language.code);
-    setIsOpen(false);
+    i18n.changeLanguage(language.code); // Changes the language using i18next
+    Cookies.set("i18next", language.code); // Sets a cookie to remember the choice
+    setIsOpen(false); // Closes the language selection dropdown
   };
 
   const pageName = useMemo(() => {
@@ -88,7 +88,7 @@ const Header = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div>  
             )}
           </div>
           <Avatar />
