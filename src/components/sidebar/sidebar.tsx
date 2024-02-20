@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
           </SidebarItem>
           <SidebarItem to="/health">
             <span className="hidden md:inline">
-              Состояние здоровья и благополучия населения
+             {t("healthState")}
             </span>
           </SidebarItem>
           <SidebarItem to="/service">
