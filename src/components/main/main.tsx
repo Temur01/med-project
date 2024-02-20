@@ -8,19 +8,20 @@ import StaffPage from "../../pages/dashboard/staff/staff";
 import AdminPage from "../../pages/dashboard/admin/admin";
 
 const Main = () => (
-    <main className="flex-1 bg-white">
+  <main className="flex-1 bg-white">
+    <div>
       <Header />
-      <div className="p-4">
-        <Routes>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/health" element={<HealthPage />} />
-          <Route path="/service" element={<ServicePage />} />
-          <Route path="/import" element={<ImportPage />} />
-          <Route path="/staff" element={<StaffPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-        </Routes>
-      </div>
-    </main>
-  );
+    </div>
+    <Routes>
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/health" element={<HealthPage />} />
+      <Route path="/service" element={<ServicePage />} />
+      <Route path="/import" element={<ImportPage />} />
+      <Route path="/staff" element={<StaffPage />} />
+      <Route path="/admin" element={<AdminPage />} />
+    </Routes>
 
-  export default Main;
+  </main>
+);
+
+export default Main;

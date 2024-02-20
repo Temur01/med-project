@@ -48,3 +48,9 @@ export type AdminRow = {
   email:string,
   time:string
 }
+
+export type Language = {
+  code: string;
+  name: string;
+  flag: string;
+};

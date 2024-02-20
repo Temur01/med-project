@@ -16,7 +16,7 @@ const ImportPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col -mx-4">
+    <div className="flex flex-col">
       <div>
         <div className="flex justify-between items-center px-8 py-4">
           <SearchBtn />

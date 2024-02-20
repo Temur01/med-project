@@ -15,7 +15,7 @@ const AdminPage = () => {
     }
   };
   return (
-    <div className="flex flex-col -mx-4">
+    <div className="flex flex-col">
       <div className="flex justify-between items-center px-8 py-4">
         <SearchBtn />
         <AddBtn btnName="данные"/>

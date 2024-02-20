@@ -4,6 +4,7 @@ import Main from "./components/main/main";
 import Sidebar from "./components/sidebar/sidebar";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
+
 const queryClient = new QueryClient();
 
 const App = () => {
