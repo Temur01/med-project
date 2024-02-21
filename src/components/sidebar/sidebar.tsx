@@ -1,8 +1,9 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import LogoSection from "../logo/logo";
 import SidebarItem from "./sidebarItem";
 
-const Sidebar: React.FC = () => {
+const Sidebar: FC = () => {
   const { t } = useTranslation();
   return (
     <aside className="w-32 md:w-72 p-2 h-screen bg-white" aria-label="Sidebar">
@@ -19,21 +20,19 @@ const Sidebar: React.FC = () => {
             <span className="hidden md:inline">{t("allInformation")}</span>
           </SidebarItem>
           <SidebarItem to="/health">
-            <span className="hidden md:inline">
-             {t("healthState")}
-            </span>
+            <span className="hidden md:inline">{t("healthState")}</span>
           </SidebarItem>
           <SidebarItem to="/service">
-            <span className="hidden md:inline">Охват услугами</span>
+            <span className="hidden md:inline">{t("service")}</span>
           </SidebarItem>
           <SidebarItem to="/staff">
-            <span className="hidden md:inline">Кадровые ресурсы</span>
+            <span className="hidden md:inline">{t("humanResources")}</span>
           </SidebarItem>
           <SidebarItem to="/import">
-            <span className="hidden md:inline">Импорт данных</span>
+            <span className="hidden md:inline">{t("importData")}</span>
           </SidebarItem>
           <SidebarItem to="/admin">
-            <span className="hidden md:inline">Администрирование</span>
+            <span className="hidden md:inline">{t("administration")}</span>
           </SidebarItem>
         </ul>
       </nav>

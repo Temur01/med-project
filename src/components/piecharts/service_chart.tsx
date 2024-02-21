@@ -1,6 +1,7 @@
 import { PieChart } from "react-minimal-pie-chart";
 import React from "react";
 import { PieChartT } from "../../types/type";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   title: string;
@@ -19,6 +20,7 @@ const PieChartOfService: React.FC<Props> = ({
   data,
   people,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className="relative w-72 h-72">
       <div className="bg-white  flex justify-center items-center">
@@ -35,7 +37,7 @@ const PieChartOfService: React.FC<Props> = ({
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div className="text-lg text-gray-600 flex justify-center items-center flex-col">
-          Всего:
+          {t("newsAll")}:
           <br />
           <span className="font-bold text-black text-2xl">{people}</span>
           {title}

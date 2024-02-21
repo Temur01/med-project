@@ -1,23 +1,25 @@
 import React from "react";
 import PieChartOfModel from "../../../../components/piecharts/service_chart";
 import { models } from "../../../../data/charts";
+import { useTranslation } from "react-i18next";
 
 const HomeModel: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div>
-      <div className="text-2xl mb-4 ms-6">Модели предоставления услуг</div>
+      <div className="text-2xl mb-4 ms-6">{t("newsModels")}</div>
       <div className="shadow-md px-12 pt-8 pb-28 rounded-lg">
         <div className="flex items-center gap-52 justify-start">
           <PieChartOfModel
-            title="Учреждений"
-            text="Практикуют систему прикрепления населения"
+            title={t("newsPhysicsIndicatorSpan")}
+            text={t("newsPractice")}
             number={75}
             data={models}
             people={"50"}
           />
           <PieChartOfModel
-            title="В Гос. секторе"
-            text="Общее количество медицинских учреждений ПМСП на 10.000 населения"
+            title={t("govermentSector")}
+            text={t("newsAllMedicineInstitution")}
             number={32}
             data={models}
             people={"50"}

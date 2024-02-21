@@ -8,34 +8,35 @@ import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { i18n } = useTranslation();
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleLanguageChange = (language: Language) => {
-    i18n.changeLanguage(language.code); // Changes the language using i18next
-    Cookies.set("i18next", language.code); // Sets a cookie to remember the choice
-    setIsOpen(false); // Closes the language selection dropdown
+    i18n.changeLanguage(language.code);
+    Cookies.set("i18next", language.code);
+    setIsOpen(false);
   };
 
   const pageName = useMemo(() => {
     switch (location.pathname) {
       case "/home":
-        return "Эффективность деятельности Системы ПМСП";
+        return `${t("newsTitle")}`;
       case "/health":
-        return "Состояние здоровья и благополучия населения";
+        return `${t("healthState")}`;
       case "/service":
-        return "Охват услугами";
+        return `${t("service")}`;
       case "/staff":
-        return "Кадровые ресурсы Министерства здравоохранения";
+        return `${t("hrmTitle")}`;
       case "/import":
-        return "Импорт данных";
+        return `${t("importData")}`;
       case "/admin":
-        return "Сотрудники";
+        return `${t("employeetitle")}`;
       default:
         return "";
     }
-  }, [location.pathname]);
+  }, [location.pathname, t]);
 
   const currentLanguageCode = Cookies.get("i18next") || "en";
   const currentLanguage = languages.find((l) => l.code === currentLanguageCode);
@@ -88,7 +89,7 @@ const Header = () => {
                     </li>
                   ))}
                 </ul>
-              </div>  
+              </div>
             )}
           </div>
           <Avatar />

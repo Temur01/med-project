@@ -1,17 +1,19 @@
+import { useTranslation } from "react-i18next";
 import PersonCard from "../../../../components/card/personCard";
 import PieChartComponent from "../../../../components/piecharts/population_chart";
 
 const AllInformationSection = () => {
+  const {t}=useTranslation()
   return (
     <div className="shadow-md p-6 rounded-lg">
       <div className="text-blue-700 text-2xl font-semibold mb-12">
-        Общие данные по населению Республики узбекистан
+        {t("newsData")}
       </div>
 
       <div className="flex gap-28">
         <div className="mt-20">
-          <PersonCard type="man" stats={55} title="МУЖЧИНЫ" />
-          <PersonCard type="woman" stats={45} title="Женщины" />
+          <PersonCard type="man" stats={55} title={t("newsMen")} />
+          <PersonCard type="woman" stats={45} title={t("newsWomen")} />
         </div>
 
         <div>
@@ -66,10 +68,10 @@ const AllInformationSection = () => {
             <PersonCard
               type="man"
               stats={30}
-              title="Общее количество"
+              title={t("newsAllCount")}
               measurment={"people"}
             />
-            <PersonCard type="woman" stats={30} title="Дети 0-5" />
+            <PersonCard type="woman" stats={30} title={t("newsChild")} />
           </div>
         </div>
       </div>

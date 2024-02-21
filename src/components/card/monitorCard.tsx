@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 type Props = {
   statitics: number;
   title: string;
@@ -6,6 +8,7 @@ type Props = {
 };
 
 const MonitorCard = ({ statitics, img, title, isGood }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center py-6 px-10 bg-white rounded-lg shadow-md relative">
       <div className="absolute -top-2 -left-2">
@@ -38,7 +41,7 @@ const MonitorCard = ({ statitics, img, title, isGood }: Props) => {
             {statitics}%
           </div>
           <div className="text-xs text-blue-600 mt-1 mx-2 font-light">
-            на за последние 5 лет
+            {t("newsDeathmothYear")}{" "}
           </div>
         </div>
       </div>

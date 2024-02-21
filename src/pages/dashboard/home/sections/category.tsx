@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import BarChartOfCategory from "../../../../components/barchart/category";
 import { ages } from "../../../../data/charts";
 
 const Category = () => {
+  const {t}=useTranslation();
   return (
     <div className="shadow-md p-6 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold">
-        Возрастные категории
+        {t("newsAgeCategory")}
       </div>
       <div className="mb-4 px-4 flex items-center gap-4 justify-end">
         <div className="relative inline-block text-gray-700">
