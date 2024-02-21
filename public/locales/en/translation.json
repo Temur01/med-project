@@ -67,5 +67,6 @@
   "technical":"Technical",
   "professional":"Professional",
   "added":"Add ",
-  "searchText":"Search..."
+  "searchText":"Search...",
+  "signOut":"Sign out"
 }

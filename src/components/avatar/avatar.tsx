@@ -1,8 +1,10 @@
 import { User } from "lucide-react";
 import { useState, FC } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 
 const Avatar: FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -30,9 +32,8 @@ const Avatar: FC = () => {
               role="menuitem"
               onClick={() => navigate("/")}
             >
-              Sign Out
+              {t("signOut")}
             </div>
-            
           </div>
         </div>
       )}

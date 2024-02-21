@@ -65,5 +65,6 @@
   "eightConsulting":"Получившие не менее 8 дородовых консультаций",
   "technical":"Технический",
   "professional":"Профессиональный",
-  "searchText":"Поиск..."
+  "searchText":"Поиск...",
+  "signOut":"Выход"
 }
