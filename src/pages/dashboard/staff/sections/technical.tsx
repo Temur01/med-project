@@ -1,16 +1,17 @@
+import { useTranslation } from "react-i18next";
 import SimpleBarChart from "../../../../components/barchart/simple";
 import { tranings } from "../../../../data/charts";
 
 const Technical = () => {
+  const { t } = useTranslation();
   return (
     <div className="shadow-md p-6 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold w-2/3 leading-6">
-        Доля технического и профессионального персонала всех семейных
-        поликлиник, обученных по использованию оборудования{" "}
+        {t("hrmTechTool")}{" "}
       </div>
       <div className="mb-4 flex items-center gap-4 justify-between">
         <div className="mt-4 text-xl">
-          Национальный показатель:
+          {t("newsPhysicsIndicator")}
           <span className="text-xl text-amber-500 font-semibold"> 50%</span>
         </div>
         <div>
@@ -60,8 +61,8 @@ const Technical = () => {
       <SimpleBarChart
         data={tranings}
         type={1}
-        firstKey="Технический"
-        secondKey="Профессиональный"
+        firstKey={t("technical")}
+        secondKey={t("professional")}
       />
     </div>
   );

@@ -56,11 +56,16 @@
   "importDate": "QO'SHILGAN SANA",
   "imoportYear": "YIL",
   "importAct": "Harakatlar",
-  "importAdd": "Xodim Qo'shish",
+  "importAdd": "Xodim",
   "employeetitle": "Xodimlar",
   "employeeSearch": "Qidiruv...",
   "employeeAcc": "FOYDALANUVCHI",
   "employeeDate": "QO'SHILGAN SANA",
   "employeeAct": "Harakatlar",
-  "employeeAdd": "Ma'lumot Qo'shish"
+  "employeeAdd": "Qo'shish",
+  "eightConsulting":"Kamida 8 marta antenatal maslahatlar olgan",
+  "technical":"Texnik",
+  "professional":"Professional",
+  "added":"Qo'shish ",
+  "searchText":"Qidirmoq..."
 }

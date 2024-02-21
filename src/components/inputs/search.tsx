@@ -1,6 +1,8 @@
 import { Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SearchBtn = () => {
+  const { t } = useTranslation();
   return (
     <form className="flex items-center">
       <label htmlFor="simple-search" className="sr-only">
@@ -14,7 +16,7 @@ const SearchBtn = () => {
           type="text"
           id="simple-search"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:outline-none focus:border-gray-500 block w-full ps-10 py-2 px-4"
-          placeholder="Поиск..."
+          placeholder={t("searchText")}
           required
         />
       </div>

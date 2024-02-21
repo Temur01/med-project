@@ -1,15 +1,17 @@
+import { useTranslation } from "react-i18next";
 import BarChartOfCategory from "../../../../components/barchart/category";
 import { medicalCentres } from "../../../../data/charts";
 
 const AYearConsult = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="shadow-md p-6 pb-10 rounded-lg">
         <div className="text-2xl text-blue-700 font-semibold">
-          Доля беременных женщин ставших на учет до 12 недель беременности
+          {t("servicePregnantAcc12")}
         </div>
         <div className="mt-4 text-xl">
-          Национальный показатель:
+          {t("newsPhysicsIndicator")}
           <span className="text-green-700 font-semibold"> 70%</span>
         </div>
         <div className="mb-2 px-4 flex items-center gap-4 justify-end">

@@ -4,8 +4,10 @@ import SearchBtn from "../../../components/inputs/search";
 import Pagination from "../../../components/pagination/pagination";
 import AdminLists from "./lists";
 import { fakeAdmins } from "../../../data/charts";
+import { useTranslation } from "react-i18next";
 
 const AdminPage = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages] = useState<number>(4);
 
@@ -18,7 +20,7 @@ const AdminPage = () => {
     <div className="flex flex-col">
       <div className="flex justify-between items-center px-8 py-4">
         <SearchBtn />
-        <AddBtn btnName="данные"/>
+        <AddBtn btnName={t("employeeAdd")} />
       </div>
       <div className="flex-grow">
         <div className="flex flex-col">

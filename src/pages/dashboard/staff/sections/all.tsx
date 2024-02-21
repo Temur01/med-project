@@ -1,16 +1,21 @@
+import { useTranslation } from "react-i18next";
 import BarChartOfCategory from "../../../../components/barchart/category";
 import { medicalCentres } from "../../../../data/charts";
 
 const AllStaffes = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="shadow-md p-6 pb-10 rounded-lg">
         <div className="text-2xl text-blue-700 font-semibold">
-        Плотность медицинских работников на 10 000 населения и их распределение
+          {t("hrmRate")}
         </div>
         <div className="mt-4 text-xl">
-          Национальный показатель:
-          <span className="text-green-700 font-semibold"> 1 240 работников</span>
+          {t("newsPhysicsIndicator")}
+          <span className="text-green-700 font-semibold">
+            {" "}
+            1 240 {t("hrmworkers")}
+          </span>
         </div>
         <div className="mb-2 px-4 flex items-center gap-4 justify-end">
           <div className="relative inline-block text-gray-700">

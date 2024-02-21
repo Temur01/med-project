@@ -4,8 +4,10 @@ import { fakeData } from "../../../data/charts";
 import Pagination from "../../../components/pagination/pagination";
 import AddBtn from "../../../components/button/add";
 import SearchBtn from "../../../components/inputs/search";
+import { useTranslation } from "react-i18next";
 
 const ImportPage: React.FC = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages] = useState<number>(4);
 
@@ -20,9 +22,9 @@ const ImportPage: React.FC = () => {
       <div>
         <div className="flex justify-between items-center px-8 py-4">
           <SearchBtn />
-          <AddBtn btnName="сотрудника" />
+          <AddBtn btnName={t("importAdd")} />
         </div>
-        <div className="font-semibold mb-3 ms-8">Импортированные данные</div>
+        <div className="font-semibold mb-3 ms-8">{t("importDataTable")}</div>
       </div>
       <div className="flex-grow">
         <div className="flex flex-col">

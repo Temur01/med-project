@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import PieChartOfService from "../../../../components/piecharts/service_chart";
 import { staff, staff_stat } from "../../../../data/charts";
 
@@ -9,6 +10,7 @@ type StatT = {
 };
 
 const Proportion = () => {
+  const { t } = useTranslation();
   const changeTextShape = (text: string): string => {
     const words = text.split(" ");
     const lastWord = words.pop();
@@ -68,7 +70,7 @@ const Proportion = () => {
       <div className="flex items-center gap-32">
         <PieChartOfService
           data={staff}
-          title="работников"
+          title={t("hrmworkers")}
           type={1}
           people={"75 000"}
         />
