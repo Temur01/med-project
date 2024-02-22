@@ -1,17 +1,17 @@
+import { useTranslation } from "react-i18next";
 import SimpleBarChart from "../../../../components/barchart/simple";
 import { adults } from "../../../../data/charts";
 
-
-
 const Adults = () => {
+  const { t } = useTranslation();
   return (
     <div className="shadow-md p-6 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold w-1/2 leading-6">
-        Коэффициент смертности детей в возрасте до пяти лет
+        {t("healthDeathChild")}
       </div>
       <div className="mb-4 flex items-center gap-4 justify-between">
         <div className="mt-4 text-xl">
-          Национальный показатель:
+          {t("newsPhysicsIndicator")}
           <span className="text-xl text-red-500 font-semibold"> 5 409</span>
         </div>
         <div>
@@ -58,7 +58,7 @@ const Adults = () => {
           </div>
         </div>
       </div>
-      <SimpleBarChart data={adults} firstKey="Мужчины" secondKey="Женщины"/>
+      <SimpleBarChart data={adults} firstKey="Мужчины" secondKey="Женщины" />
     </div>
   );
 };

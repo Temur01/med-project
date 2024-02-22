@@ -1,15 +1,17 @@
+import { useTranslation } from "react-i18next";
 import BarChartOfCategory from "../../../../components/barchart/category";
 import { medicalCentres } from "../../../../data/charts";
 
 const Children = () => {
+  const { t } = useTranslation();
   return (
     <div className="shadow-md p-6 pb-10 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold w-1/2 leading-6">
-        Коэффициент младенческой смертности до 1 года
+        {t("healthDeathChild1")}
       </div>
       <div className="mb-4 flex items-center gap-4 justify-between">
         <div className="mt-4 text-xl">
-          Национальный показатель:
+          {t("newsPhysicsIndicator")}
           <span className="text-xl text-red-500 font-semibold"> 3 284</span>
         </div>
         <div>
