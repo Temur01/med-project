@@ -14,7 +14,7 @@ export const languages = [
     code: "ru",
   },
   {
-    name: "Uzbek",
+    name: "O'zbek",
     flag: uzbekistan,
     code: "uz",
   },

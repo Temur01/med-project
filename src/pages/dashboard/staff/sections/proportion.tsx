@@ -1,12 +1,15 @@
 import { useTranslation } from "react-i18next";
 import PieChartOfService from "../../../../components/piecharts/service_chart";
 import { staff, staff_stat } from "../../../../data/charts";
+import Cookies from "js-cookie";
 
 type StatT = {
   id: number;
   name: string;
   percentage: string;
   value: number;
+  name_uz: string;
+  name_en: string;
 };
 
 const Proportion = () => {
@@ -86,7 +89,15 @@ const Proportion = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-semibold">{item.value}</span>
-                <span className="text-sm">{changeTextShape(item.name)}</span>
+                <span className="text-sm">
+                  {changeTextShape(
+                    Cookies.get("i18next") === "uz"
+                      ? item.name_uz
+                      : Cookies.get("i18next") === "ru"
+                      ? item.name
+                      : item.name_en
+                  )}
+                </span>
               </div>
             </div>
           ))}

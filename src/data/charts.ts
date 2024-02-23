@@ -16,18 +16,24 @@ export const staff = [
 export const staff_stat = [
   {
     name: "Многопрофильные центральные поликлиники",
+    name_uz: "Ko'p tarmoqli markaziy klinikalar",
+    name_en: "Multidisciplinary central clinics",
     value: 25000,
     percentage: "32%",
     id: 1,
   },
   {
     name: "Пункты семейных врачей",
+    name_en: "Family doctors offices",
+    name_uz: "Пункты семейных врачей",
     value: 25000,
     percentage: "32%",
     id: 2,
   },
   {
     name: "Семейные поликлиники",
+    name_uz: "Oilaviy poliklinikalar",
+    name_en: "Family clinics",
     value: 25000,
     percentage: "32%",
     id: 3,
