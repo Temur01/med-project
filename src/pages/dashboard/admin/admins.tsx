@@ -1,11 +1,15 @@
 import { Pencil, Trash2 } from "lucide-react";
 import { AdminRow } from "../../../types/type";
+import { useState } from "react";
+import DeleteModal from "../../../modals/delete";
 
 type Props = {
   admin: AdminRow;
 };
 
 const Admins = ({ admin }: Props) => {
+  const [openDelete, setOpenDelete] = useState<boolean>(false);
+
   return (
     <tr key={admin.id} className="cursor-pointer">
       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -17,11 +21,11 @@ const Admins = ({ admin }: Props) => {
           src="https://www.shutterstock.com/image-vector/black-woman-smiling-portrait-vector-600nw-2281497689.jpg"
           alt="Rounded avatar"
         />
-       <div className="text-sm text-gray-500">
-       {admin.username}
-        <br />
-        <span className="font-light text-xs">{admin.email}</span>
-       </div>
+        <div className="text-sm text-gray-500">
+          {admin.username}
+          <br />
+          <span className="font-light text-xs">{admin.email}</span>
+        </div>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
         {admin.time}
@@ -30,6 +34,7 @@ const Admins = ({ admin }: Props) => {
         <button
           className="p-2.5 bg-indigo-200 rounded-full text-gray-800 hover:text-gray-950 hover:bg-indigo-300"
           type="button"
+          onClick={() => setOpenDelete(true)}
         >
           <Trash2 size={18} />
         </button>
@@ -39,6 +44,7 @@ const Admins = ({ admin }: Props) => {
         >
           <Pencil size={18} />
         </button>
+        {openDelete && <DeleteModal setOpen={setOpenDelete} />}
       </td>
     </tr>
   );
