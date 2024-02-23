@@ -12,15 +12,15 @@ const Children = () => {
       <div className="mb-4 flex items-center gap-4 justify-between">
         <div className="mt-4 text-xl">
           {t("newsPhysicsIndicator")}
-          <span className="text-xl text-red-500 font-semibold"> 3 284</span>
+          <span className="text-xl text-red-500 font-semibold"> 3 284</span>    
         </div>
         <div>
           <div className="relative inline-block text-gray-700 me-4">
             <select
-              className="bg-white border border-gray-300 rounded-2xl text-sm 
+              className="bg-white border border-gray-300 rounded-2xl text-sm   
              h-9 pl-4 pr-10 
              appearance-none outline-none"
-            >
+            > 
               {[...Array(3)].map((_, index) => (
                 <option key={index} value={2023 - index}>
                   {2023 - index}
@@ -44,7 +44,7 @@ const Children = () => {
             h-9 pl-4 pr-10 
              appearance-none outline-none"
             >
-              <option value={"Возраст"}>Ташкент</option>
+              <option value={t("city")}>{t("city")}</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
               <svg

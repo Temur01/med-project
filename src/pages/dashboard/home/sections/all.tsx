@@ -3,7 +3,7 @@ import PersonCard from "../../../../components/card/personCard";
 import PieChartComponent from "../../../../components/piecharts/population_chart";
 
 const AllInformationSection = () => {
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   return (
     <div className="shadow-md p-6 rounded-lg">
       <div className="text-blue-700 text-2xl font-semibold mb-12">
@@ -49,8 +49,9 @@ const AllInformationSection = () => {
                 className="w-full bg-white border border-gray-300 rounded-2xl text-sm pl-4 pr-10 h-10 appearance-none outline-none"
                 aria-label="Age"
               >
-                <option value="all" className="">Возраст</option>
-          
+                <option value={t("newsAge")}>
+                  {t("newsAge")}
+                </option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
                 <svg

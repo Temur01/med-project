@@ -44,7 +44,7 @@ const Technical = () => {
             h-9 pl-4 pr-10 
              appearance-none outline-none"
             >
-              <option value={"Возраст"}>Пол</option>
+              <option value={t("newsGender")}>{t("newsGender")}</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
               <svg
