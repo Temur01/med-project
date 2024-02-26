@@ -43,14 +43,24 @@ export type DataRow = {
 };
 
 export type AdminRow = {
-  id:number,
-  username:string,
-  email:string,
-  time:string
-}
+  id: number;
+  username: string;
+  email: string;
+  time: string;
+};
 
 export type Language = {
   code: string;
   name: string;
   flag: string;
+};
+
+export type PopulationT = {
+  year: string;
+  age: string;
+};
+
+export type PopulationAgeT = {
+  year: string;
+  gender: string;
 };

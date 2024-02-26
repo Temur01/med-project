@@ -17,3 +17,6 @@
 - Tailwindcss
 - Axios
 - React Query (devtools);
+- Run with bun.js
+- i18next
+- Cookies.js
