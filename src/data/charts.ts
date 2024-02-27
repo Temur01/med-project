@@ -1,7 +1,4 @@
-export const population = [
-  { title: "ЖЕНЩИНЫ", value: 45, color: "#CD0C88" },
-  { title: "МУЖЧИНЫ", value: 55, color: "#245DDD" },
-];
+
 export const models = [
   { value: 55, color: "#B2B7C2" },
   { value: 45, color: "#636FDE" },

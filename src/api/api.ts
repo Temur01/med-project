@@ -1,25 +1,31 @@
 import axios from "axios";
-import { PopulationAgeT, PopulationT } from "../types/type";
+import {
+  PopulationDataT,
+  PopulationListAgesT,
+  PopulationListYearsT,
+  PopulationT,
+} from "../types/type";
 
 const instance = axios.create({
   baseURL: "https://bi-phc.ssv.uz/",
 });
 
-export const getPopulation = async (params: PopulationT) => {
-  return await instance.get(
-    `stat/population?year=${params.year}&age=${params.age}`,
-    {
-      headers: {
-        Authentication: `Bearer`,
-      },
-    }
+export const getPopulation = async (
+  params: PopulationT
+): Promise<PopulationDataT> => {
+  const data = await instance.get(
+    `stat/population?year=${params.year}&age=${params.age}`
   );
+  return data.data;
 };
 
-export const getPopulationAge = async (params: PopulationAgeT) => {
-  return await instance.get(
-    `stat/population-age?year=${params.year}&gender=${params.gender}`
-  );
+export const getPopulationListAges = async (): Promise<PopulationListAgesT> => {
+  const data = await instance.get(`stat/list-age`);
+  return data.data;
 };
 
-export default instance;
+export const getPopulationListYear =
+  async (): Promise<PopulationListYearsT> => {
+    const data = await instance.get(`stat/list-year-age`);
+    return data.data;
+  };

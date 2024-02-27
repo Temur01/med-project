@@ -1,6 +1,6 @@
 type Props = {
   title: string;
-  stats: number;
+  stats: number | undefined;
   type: string;
   measurment?: string;
 };

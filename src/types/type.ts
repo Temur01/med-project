@@ -56,11 +56,38 @@ export type Language = {
 };
 
 export type PopulationT = {
-  year: string;
-  age: string;
+  year: number | string;
+  age: number | string;
 };
 
 export type PopulationAgeT = {
   year: string;
   gender: string;
+};
+
+export type ReturningDataFromBackendT = {
+  code: number;
+  success: boolean;
+};
+
+export type PopulationDataT = ReturningDataFromBackendT & {
+  data: {
+    year: number;
+    male: number;
+    female: number;
+    total: number;
+  };
+};
+
+export type PopulationListYearsT = ReturningDataFromBackendT & {
+  data: {
+    year: number;
+  }[];
+};
+
+export type PopulationListAgesT = ReturningDataFromBackendT & {
+  data: {
+    sort: number;
+    age: string;
+  }[];
 };
