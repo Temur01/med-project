@@ -17,7 +17,7 @@ const AllInformationSection = () => {
   const [year, setYear] = useState<number | string>(2023);
   const [age, setAge] = useState<number | string>(0);
 
-  const { data: years, isLoading: isLoadingForYear } = useFetchQuery({
+  const { data: years } = useFetchQuery({
     keyName: "years",
     queryFunc: getPopulationListYear,
   });
