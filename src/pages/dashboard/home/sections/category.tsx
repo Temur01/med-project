@@ -181,7 +181,7 @@ const Category = () => {
           </div>
         </Listbox>
       </div>
-      <div className="pb-4">
+      <div className="pb-5">
         <BarChartOfCategory data={newFormatData} type="light-blue" />
       </div>
     </div>

@@ -7,7 +7,7 @@ import HomeModel from "./sections/models";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="px-2">
       <div>
         <AllInformationSection />
       </div>

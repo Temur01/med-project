@@ -4,7 +4,7 @@ import Pregnant from "./sections/pregnant";
 
 const ServicePage = () => {
   return (
-    <div>
+    <div className="px-2">
       <div>
         <Pregnant />
       </div>

@@ -4,7 +4,7 @@ import Mathers from "./sections/mathers";
 
 const HealthPage = () => {
   return (
-    <div>
+    <div className="px-2">
       <div>
         <Mathers />
       </div>

@@ -6,7 +6,7 @@ import Training from "./sections/training";
 
 const StaffPage = () => {
   return (
-    <div>
+    <div className="px-2">
       <div>
         <AllStaffes />
       </div>

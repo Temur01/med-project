@@ -54,7 +54,7 @@ const BarChartOfCategory = ({ data, type }: Props) => {
             ? "#DD3957"
             : "#636FDE"
         }
-        barSize={80}
+        barSize={72}
         radius={[10, 10, 10, 10]}
       />
     </BarChart>

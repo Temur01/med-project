@@ -18,9 +18,7 @@ const App = () => {
             <div className="border-r">
               <Sidebar />
             </div>
-            <div className="px-2">
             <Main />
-            </div>
           </div>
         </BrowserRouter>
         <ReactQueryDevtools />
