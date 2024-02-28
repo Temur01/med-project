@@ -36,7 +36,7 @@ const BarChartOfCategory = ({ data, type }: Props) => {
     >
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
       <XAxis dataKey="name" axisLine={false} tickMargin={10} />
-      <YAxis tick={{ fill: 'black' }} /> 
+      <YAxis /> 
       <Tooltip />
       <Bar
         dataKey={
