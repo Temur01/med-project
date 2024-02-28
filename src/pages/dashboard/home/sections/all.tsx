@@ -8,14 +8,17 @@ import {
   getPopulationListYear,
 } from "../../../../api/api";
 import { Fragment, useState } from "react";
-import { PopulationDataT } from "../../../../types/type";
+import { AgeT, PopulationDataT } from "../../../../types/type";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 const AllInformationSection = () => {
   const { t } = useTranslation();
   const [year, setYear] = useState<number | string>(2023);
-  const [age, setAge] = useState<number | string>(0);
+  const [ageD, setAgeD] = useState<AgeT>({
+    sort: 0,
+    age: "Jami",
+  });
 
   const { data: years } = useFetchQuery({
     keyName: "years",
@@ -28,7 +31,7 @@ const AllInformationSection = () => {
   });
 
   const fetchPopulation = (): Promise<PopulationDataT> => {
-    return getPopulation({ year, age });
+    return getPopulation({ year, ageD });
   };
 
   const { data } = useFetchQuery<PopulationDataT>({
@@ -61,7 +64,7 @@ const AllInformationSection = () => {
         </div>
         <div>
           <div className="mb-14 px-4 flex items-center gap-4">
-            <Listbox value={year} onChange={setYear} >
+            <Listbox value={year} onChange={setYear}>
               <div className="relative mt-1 w-28">
                 <Listbox.Button className="w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate">{year}</span>
@@ -98,7 +101,7 @@ const AllInformationSection = () => {
                                 selected ? "font-medium" : "font-normal"
                               }`}
                             >
-                              {item.year} 
+                              {item.year}
                             </span>
                             {selected ? (
                               <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-amber-600">
@@ -116,10 +119,10 @@ const AllInformationSection = () => {
                 </Transition>
               </div>
             </Listbox>
-            <Listbox value={age} onChange={setAge} >
+            <Listbox value={ageD} onChange={setAgeD}>
               <div className="relative mt-1 w-28">
                 <Listbox.Button className="w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <span className="block truncate">{age}</span>
+                  <span className="block truncate">{ageD.age}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronUpDownIcon
                       className="h-5 w-5 text-gray-400"
@@ -137,7 +140,7 @@ const AllInformationSection = () => {
                     {ages?.data.map((item: { age: string; sort: number }) => (
                       <Listbox.Option
                         key={item.age}
-                        value={item.age}
+                        value={item}
                         className={({ active }) =>
                           `relative cursor-default select-none py-1 pl-8 pr-4 ${
                             active
@@ -153,7 +156,7 @@ const AllInformationSection = () => {
                                 selected ? "font-medium" : "font-normal"
                               }`}
                             >
-                              {item.age} 
+                              {item.age}
                             </span>
                             {selected ? (
                               <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-amber-600">
@@ -171,17 +174,6 @@ const AllInformationSection = () => {
                 </Transition>
               </div>
             </Listbox>
-            {/* <select
-              className="w-full bg-white border border-gray-300 rounded-2xl text-sm pl-4 pr-10 h-9 appearance-none outline-none"
-              aria-label="Age"
-              onChange={(e) => setAge(e.target.value)}
-            >
-              {ages?.data.map((item: { age: string; sort: number }) => (
-                <option value={item.age} key={item.age}>
-                  {item.age}
-                </option>
-              ))}
-            </select> */}
           </div>
 
           <div>
@@ -191,7 +183,9 @@ const AllInformationSection = () => {
               title={t("newsAllCount")}
               measurment={"people"}
             />
-            <PersonCard type="woman" stats={30} title={t("newsChild")} />
+            {
+              ageD.sort === 1 && <PersonCard type="woman" stats={30} title={t("newsChild")} />
+            }
           </div>
         </div>
       </div>

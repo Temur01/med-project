@@ -14,7 +14,7 @@ export const getPopulation = async (
   params: PopulationT
 ): Promise<PopulationDataT> => {
   const data = await instance.get(
-    `stat/population?year=${params.year}&age=${params.age}`
+    `stat/population?year=${params.year}&age=${params.ageD.sort}`
   );
   return data.data;
 };

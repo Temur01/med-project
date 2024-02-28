@@ -55,15 +55,22 @@ export type Language = {
   flag: string;
 };
 
+export type AgeT = {
+  age: string;
+  sort: number;
+};
+
 export type PopulationT = {
   year: number | string;
-  age: number | string;
+  ageD: AgeT;
 };
 
 export type PopulationAgeT = {
   year: string;
   gender: string;
 };
+
+
 
 export type ReturningDataFromBackendT = {
   code: number;
