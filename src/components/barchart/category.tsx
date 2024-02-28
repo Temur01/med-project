@@ -8,7 +8,10 @@ type Props = {
   type?: string;
 };
 
+
+
 const BarChartOfCategory = ({ data, type }: Props) => {
+  console.log("🚀 ~ BarChartOfCategory ~ data:", data)
   const [chartWidth, setChartWidth] = useState<number>(window.innerWidth - 400);
 
   useEffect(() => {
@@ -28,13 +31,12 @@ const BarChartOfCategory = ({ data, type }: Props) => {
       data={data}
       margin={{
         top: 40,
-        right: 0,
-        left: -24,
+        left: 20,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
       <XAxis dataKey="name" axisLine={false} tickMargin={10} />
-      <YAxis />
+      <YAxis tick={{ fill: 'black' }} /> 
       <Tooltip />
       <Bar
         dataKey={
@@ -54,7 +56,7 @@ const BarChartOfCategory = ({ data, type }: Props) => {
             ? "#DD3957"
             : "#636FDE"
         }
-        barSize={72}
+        barSize={70}
         radius={[10, 10, 10, 10]}
       />
     </BarChart>
