@@ -18,6 +18,8 @@ export type ActiveShapeType = {
 export type BarShapeType = {
   name: string;
   Результат: number;
+  Natija: number;
+  Result: number;
 };
 export type AdultDataItem = {
   name: string;
@@ -119,4 +121,3 @@ export type StatAgeParamsT = {
   gender: string;
   year: number;
 };
-

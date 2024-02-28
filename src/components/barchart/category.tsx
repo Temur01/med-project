@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { BarShapeType } from "../../types/type";
+import Cookies from "js-cookie";
 
 type Props = {
   data: BarShapeType[] | undefined;
@@ -36,7 +37,13 @@ const BarChartOfCategory = ({ data, type }: Props) => {
       <YAxis />
       <Tooltip />
       <Bar
-        dataKey="Результат"
+        dataKey={
+          Cookies.get("i18next") === "uz"
+            ? "Natija"
+            : Cookies.get("i18next") === "ru"
+            ? "Результат"
+            : "Result"
+        }
         stackId="a"
         fill={
           type === "light-blue"

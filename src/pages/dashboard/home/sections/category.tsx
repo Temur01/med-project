@@ -52,6 +52,8 @@ const Category = () => {
               : " year"
           }`,
         Результат: item.Результат,
+        Result: item.Результат,
+        Natija: item.Результат,
       }));
       setNewFormatData(updatedData);
     }
@@ -159,7 +161,11 @@ const Category = () => {
                             selected ? "font-medium" : "font-normal"
                           }`}
                         >
-                          {item.name_ru}
+                          {Cookies.get("i18next") === "uz"
+                            ? item.name_uz
+                            : Cookies.get("i18next") === "ru"
+                            ? item.name_ru
+                            : item.name}
                         </span>
                         {selected ? (
                           <span className="absolute inset-y-0 left-0 flex items-center pl-2 text-amber-600">
@@ -175,7 +181,9 @@ const Category = () => {
           </div>
         </Listbox>
       </div>
-      <BarChartOfCategory data={newFormatData} type="light-blue" />
+      <div className="pb-4">
+        <BarChartOfCategory data={newFormatData} type="light-blue" />
+      </div>
     </div>
   );
 };
