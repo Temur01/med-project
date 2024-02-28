@@ -2,14 +2,19 @@ import { useQuery } from "@tanstack/react-query";
 
 type QueryFunctionType<T> = () => Promise<T>;
 
+type KeyT = {
+  name: string;
+  id: number | string;
+};
+
 type useFetchT<T> = {
-  keyName: string;
+  keyVal: KeyT;
   queryFunc: QueryFunctionType<T>;
 };
 
-export const useFetchQuery = <T>({ keyName, queryFunc }: useFetchT<T>) => {
+export const useFetchQuery = <T>({ keyVal, queryFunc }: useFetchT<T>) => {
   return useQuery<T>({
-    queryKey: [keyName],
+    queryKey: [keyVal.name, keyVal.id],
     queryFn: queryFunc,
   });
 };

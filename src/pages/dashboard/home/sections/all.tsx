@@ -14,19 +14,25 @@ import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 const AllInformationSection = () => {
   const { t } = useTranslation();
-  const [year, setYear] = useState<number | string>(2023);
+  const [year, setYear] = useState<number>(2023);
   const [ageD, setAgeD] = useState<AgeT>({
     sort: 0,
     age: "Jami",
   });
 
   const { data: years } = useFetchQuery({
-    keyName: "years",
+    keyVal: {
+      name: "years",
+      id: year,
+    },
     queryFunc: getPopulationListYear,
   });
 
   const { data: ages } = useFetchQuery({
-    keyName: "ages",
+    keyVal: {
+      name: "ages",
+      id: ageD.sort,
+    },
     queryFunc: getPopulationListAges,
   });
 
@@ -35,7 +41,7 @@ const AllInformationSection = () => {
   };
 
   const { data } = useFetchQuery<PopulationDataT>({
-    keyName: "population",
+    keyVal: { name: "population", id: `${year}-${ageD.sort}` },
     queryFunc: fetchPopulation,
   });
 
@@ -183,9 +189,9 @@ const AllInformationSection = () => {
               title={t("newsAllCount")}
               measurment={"people"}
             />
-            {
-              ageD.sort === 1 && <PersonCard type="woman" stats={30} title={t("newsChild")} />
-            }
+            {ageD.sort === 1 && (
+              <PersonCard type="woman" stats={30} title={t("newsChild")} />
+            )}
           </div>
         </div>
       </div>

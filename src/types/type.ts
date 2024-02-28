@@ -89,6 +89,8 @@ export type PopulationDataT = ReturningDataFromBackendT & {
 export type PopulationListYearsT = ReturningDataFromBackendT & {
   data: {
     year: number;
+    sort:number
+
   }[];
 };
 
