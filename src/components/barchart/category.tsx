@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { BarShapeType } from "../../types/type";
 
 type Props = {
-  data: BarShapeType[];
+  data: BarShapeType[] | undefined;
   type?: string;
 };
 

@@ -15,12 +15,14 @@ export const genderD = [
     name_uz: "Ayol",
     name_ru: "Женский",
     id: 1,
+    code:"F"
   },
   {
     name: "Male",
     name_uz: "Erkak",
     name_ru: "Мужской",
     id: 2,
+    code:"M"
   },
 ];
 
@@ -51,40 +53,6 @@ export const staff_stat = [
   },
 ];
 
-export const ages = [
-  {
-    name: "0-4 года",
-    Результат: 15,
-  },
-  {
-    name: "5-10 года",
-    Результат: 20,
-  },
-  {
-    name: "11-15 года",
-    Результат: 25,
-  },
-  {
-    name: "16-20 года",
-    Результат: 35,
-  },
-  {
-    name: "21-25 года",
-    Результат: 46,
-  },
-  {
-    name: "26-30 года",
-    Результат: 38,
-  },
-  {
-    name: "31-35 года",
-    Результат: 43,
-  },
-  {
-    name: "40-45 года",
-    Результат: 53,
-  },
-];
 
 export const medicalCentres = [
   {

@@ -1,19 +1,27 @@
 import { useTranslation } from "react-i18next";
 import BarChartOfCategory from "../../../../components/barchart/category";
-import { ages, genderD } from "../../../../data/charts";
-import { getPopulationListYear } from "../../../../api/api";
+import { genderD } from "../../../../data/charts";
+import {
+  getPopulationListYear,
+  getStatPopulationAge,
+} from "../../../../api/api";
 import { useFetchQuery } from "../../../../hooks/useFetchQuery";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { genderT } from "../../../../types/type";
+import {
+  BarShapeType,
+  StatPopulationAgeT,
+  genderT,
+} from "../../../../types/type";
 import Cookies from "js-cookie";
 
 const Category = () => {
   const { t } = useTranslation();
   const [year, setYear] = useState<number>(2023);
   const [gender, setGender] = useState<genderT>(genderD[0]);
-  console.log("🚀 ~ Category ~ gender:", gender);
+  const [newFormatData, setNewFormatData] = useState<BarShapeType[]>([]);
+
   const { data: years } = useFetchQuery({
     keyVal: {
       name: "years",
@@ -21,6 +29,39 @@ const Category = () => {
     },
     queryFunc: getPopulationListYear,
   });
+
+  const fetchStatAge = (): Promise<StatPopulationAgeT> => {
+    return getStatPopulationAge({ year, gender: gender.code });
+  };
+
+  const { data } = useFetchQuery<StatPopulationAgeT>({
+    keyVal: { name: "populationAge", id: `${year}-${gender.code}` },
+    queryFunc: fetchStatAge,
+  });
+
+  const newFormatSenderDataFunc = (items: BarShapeType[] | undefined) => {
+    if (items) {
+      const updatedData = items.map((item) => ({
+        name:
+          item.name +
+          ` ${
+            Cookies.get("i18next") === "uz"
+              ? " yosh"
+              : Cookies.get("i18next") === "ru"
+              ? " годa"
+              : " year"
+          }`,
+        Результат: item.Результат,
+      }));
+      setNewFormatData(updatedData);
+    }
+  };
+
+  useEffect(() => {
+    newFormatSenderDataFunc(data?.data?.data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, Cookies.get("i18next")]);
+
   return (
     <div className="shadow-md px-6 py-2 rounded-lg">
       <div className="text-2xl text-blue-700 font-semibold">
@@ -134,7 +175,7 @@ const Category = () => {
           </div>
         </Listbox>
       </div>
-      <BarChartOfCategory data={ages} type="light-blue" />
+      <BarChartOfCategory data={newFormatData} type="light-blue" />
     </div>
   );
 };

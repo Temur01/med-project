@@ -4,6 +4,8 @@ import {
   PopulationListAgesT,
   PopulationListYearsT,
   PopulationT,
+  StatAgeParamsT,
+  StatPopulationAgeT,
 } from "../types/type";
 
 const instance = axios.create({
@@ -30,9 +32,11 @@ export const getPopulationListYear =
     return data.data;
   };
 
-export const getStatPopulationAge = async () => {
+export const getStatPopulationAge = async (
+  params: StatAgeParamsT
+): Promise<StatPopulationAgeT> => {
   const data = await instance.get(
-    `stat/population-age?year={params.year}&gender={params.gender}`
+    `stat/population-age?year=${params.year}&gender=${params.gender}`
   );
   return data.data;
 };

@@ -99,9 +99,24 @@ export type PopulationListAgesT = ReturningDataFromBackendT & {
   }[];
 };
 
+export type StatPopulationAgeT = ReturningDataFromBackendT & {
+  data: {
+    age: string;
+    total: string;
+    data: [];
+  };
+};
+
 export type genderT = {
   name: string;
   name_uz: string;
   name_ru: string;
   id: number;
+  code: string;
 };
+
+export type StatAgeParamsT = {
+  gender: string;
+  year: number;
+};
+
