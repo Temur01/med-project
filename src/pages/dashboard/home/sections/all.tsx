@@ -190,7 +190,7 @@ const AllInformationSection = () => {
               measurment={"people"}
             />
             {ageD.sort === 1 && (
-              <PersonCard type="woman" stats={30} title={t("newsChild")} />
+              <PersonCard type="woman" stats={data?.data["0_4"]} title={t("newsChild")} />
             )}
           </div>
         </div>

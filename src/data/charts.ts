@@ -1,4 +1,3 @@
-
 export const models = [
   { value: 55, color: "#B2B7C2" },
   { value: 45, color: "#636FDE" },
@@ -8,6 +7,21 @@ export const staff = [
   { value: 32, color: "#05C0DA" },
   { value: 32, color: "#636FDE" },
   { value: 32, color: "#B2B7C2" },
+];
+
+export const genderD = [
+  {
+    name: "Female",
+    name_uz: "Ayol",
+    name_ru: "Женский",
+    id: 1,
+  },
+  {
+    name: "Male",
+    name_uz: "Erkak",
+    name_ru: "Мужской",
+    id: 2,
+  },
 ];
 
 export const staff_stat = [

@@ -29,3 +29,10 @@ export const getPopulationListYear =
     const data = await instance.get(`stat/list-year-age`);
     return data.data;
   };
+
+export const getStatPopulationAge = async () => {
+  const data = await instance.get(
+    `stat/population-age?year={params.year}&gender={params.gender}`
+  );
+  return data.data;
+};

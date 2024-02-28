@@ -70,8 +70,6 @@ export type PopulationAgeT = {
   gender: string;
 };
 
-
-
 export type ReturningDataFromBackendT = {
   code: number;
   success: boolean;
@@ -83,14 +81,14 @@ export type PopulationDataT = ReturningDataFromBackendT & {
     male: number;
     female: number;
     total: number;
+    "0_4"?: number;
   };
 };
 
 export type PopulationListYearsT = ReturningDataFromBackendT & {
   data: {
     year: number;
-    sort:number
-
+    sort: number;
   }[];
 };
 
@@ -99,4 +97,11 @@ export type PopulationListAgesT = ReturningDataFromBackendT & {
     sort: number;
     age: string;
   }[];
+};
+
+export type genderT = {
+  name: string;
+  name_uz: string;
+  name_ru: string;
+  id: number;
 };
