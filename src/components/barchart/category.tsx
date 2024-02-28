@@ -9,9 +9,7 @@ type Props = {
 };
 
 
-
 const BarChartOfCategory = ({ data, type }: Props) => {
-  console.log("🚀 ~ BarChartOfCategory ~ data:", data)
   const [chartWidth, setChartWidth] = useState<number>(window.innerWidth - 400);
 
   useEffect(() => {
